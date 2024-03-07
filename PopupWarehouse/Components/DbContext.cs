@@ -1,14 +1,36 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using System.IO;
 
-public class AppDbContext : DbContext
+using Models;
+
+namespace Data
 {
-    // List models here:
-    //public DbSet<User> Users { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public class AppDbContext : DbContext
     {
-        var connectionString = App.Configuration.GetConnectionString("TestConnection");
-        optionsBuilder.UseSqlServer(connectionString);
+        private readonly string _connectionString;
+
+        public AppDbContext(string connectionStringName)
+        {
+            var configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory()) // Ensure this path is correct for your environment
+                .AddJsonFile("appsettings.json") // Adjust if your configuration file is named or located differently
+                .Build();
+
+            _connectionString = configuration.GetConnectionString(connectionStringName);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(_connectionString);
+            }
+        }
+
+        // Define DbSets
+        public DbSet<Supplier> Suppliers { get; set; }
     }
+
+   
 }

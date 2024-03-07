@@ -1,4 +1,16 @@
-NUnit Attributes:
+# Testing
+
+## How-to-run
+
+```
+dotnet test -v n
+```
+
+
+
+## Reference
+
+### NUnit Attributes:
 
 - [Test]: Marks a method as a test method.
 - [TestFixture]: Indicates that a class contains tests. It can also be used for setting up a common set of objects for multiple test methods.
@@ -10,7 +22,7 @@ NUnit Attributes:
 - [TestCaseSource]: Specifies a method, field, or property that provides test cases, allowing for more complex parameterized tests.
 
 
-NUnit Assertion Methods:
+### NUnit Assertion Methods:
 
 - Assert.AreEqual(expected, actual): Checks that two values are equal. If not, the test fails.
 - Assert.AreNotEqual(notExpected, actual): Checks that two values are not equal. If they are equal, the test fails.
