@@ -7,6 +7,7 @@ using System.Linq;
 
 namespace Tests
 {
+    [TestFixture]
     public class SupplierServiceTests
     {
         private AppDbContext _context;
@@ -32,7 +33,7 @@ namespace Tests
         }
 
         [Test]
-        public void SupplierService_AddsSupplierToDatabase()
+        public void SupplierService_AddSupplierToDatabase()
         {
             // Arrange
             var supplier = new Supplier { Name = "Test Supplier", Address = "123 Test St" };
