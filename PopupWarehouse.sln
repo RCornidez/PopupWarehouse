@@ -1,25 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.5.002.0
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PopupWarehouse", "PopupWarehouse.csproj", "{C0429E70-C6BE-4AE9-962D-908CA468DE98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopupWarehouse", "PopupWarehouse\PopupWarehouse.csproj", "{F897B5BF-8178-4911-B894-BE226061BEB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopupWarehouse.Tests", "PopupWarehouse.Tests\PopupWarehouse.Tests.csproj", "{7B57B8A5-7DD0-4173-8D30-0DBA0CA2307E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C0429E70-C6BE-4AE9-962D-908CA468DE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0429E70-C6BE-4AE9-962D-908CA468DE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0429E70-C6BE-4AE9-962D-908CA468DE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0429E70-C6BE-4AE9-962D-908CA468DE98}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {66B9598B-578D-48C8-8000-BFBAA9013871}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F897B5BF-8178-4911-B894-BE226061BEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F897B5BF-8178-4911-B894-BE226061BEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F897B5BF-8178-4911-B894-BE226061BEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F897B5BF-8178-4911-B894-BE226061BEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B57B8A5-7DD0-4173-8D30-0DBA0CA2307E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B57B8A5-7DD0-4173-8D30-0DBA0CA2307E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B57B8A5-7DD0-4173-8D30-0DBA0CA2307E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B57B8A5-7DD0-4173-8D30-0DBA0CA2307E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

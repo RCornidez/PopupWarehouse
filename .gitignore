@@ -1,0 +1,62 @@
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# MSTest, NUnit Test Results
+[Tt]est[Rr]esult*/
+*.VisualState.xml
+TestResult.xml
+nunit-*.xml
+
+# .NET Core / .NET
+project.lock.json
+artifacts/
+**/Properties/launchSettings.json
+
+# User-specific files for Visual Studio
+*.rsuser
+*.suo
+*.user
+*.userosscache
+
+# User-specific files for SQL Server Management Studio (SSMS)
+*.mdf
+*.ldf
+*.ndf
+
+# Ignoring VS temporary files
+.vs/
+*.user
+*.userosscache
+*.suo
+
+# ReSharper
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
