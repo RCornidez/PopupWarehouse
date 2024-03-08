@@ -12,27 +12,27 @@ namespace Tests
     {
         private AppDbContext _context;
         private WarehouseLocationService _locationService;
+         
+        [OneTimeSetUp]
+        public void GlobalSetup()
+        {
+            // Setup DbContext with TestConnection
+            _context = new AppDbContext("TestConnection");
+            _context.Database.EnsureCreated(); // Ensure the database is created
+            _locationService = new WarehouseLocationService(_context);
+        }
+
+        [OneTimeTearDown]
+        public void GlobalTeardown()
+        {
+            _context.Database.EnsureDeleted(); // Delete the database after tests
+        }
 
         [SetUp]
         public void Setup()
         {
-
-            // Setup DbContext with TestConnection
-            _context = new AppDbContext("TestConnection");
-            _context.Database.EnsureCreated(); // Ensure the database is created
-            
-            // Initialize the service
-            _locationService = new WarehouseLocationService(_context);
-
-            // Consider clearing the Suppliers table to start with a clean state
             _context.WarehouseLocations.RemoveRange(_context.WarehouseLocations);
             _context.SaveChanges();
-        }
-
-        [TearDown]
-        public void Teardown()
-        {
-            _context.Database.EnsureDeleted();
         }
 
         [Test]

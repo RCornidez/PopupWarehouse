@@ -12,24 +12,27 @@ namespace Tests
     {
         private AppDbContext _context;
         private SupplierService _supplierService;
-
-        [SetUp]
-        public void Setup()
+        
+        [OneTimeSetUp]
+        public void GlobalSetup()
         {
             // Setup DbContext with TestConnection
             _context = new AppDbContext("TestConnection");
             _context.Database.EnsureCreated(); // Ensure the database is created
             _supplierService = new SupplierService(_context);
-
-            // Consider clearing the Suppliers table to start with a clean state
-            _context.Suppliers.RemoveRange(_context.Suppliers);
-            _context.SaveChanges();
         }
 
-        [TearDown]
-        public void Teardown()
+        [OneTimeTearDown]
+        public void GlobalTeardown()
         {
             _context.Database.EnsureDeleted(); // Delete the database after tests
+        }
+
+        [SetUp]
+        public void Setup()
+        {
+            _context.Suppliers.RemoveRange(_context.Suppliers);
+            _context.SaveChanges();
         }
 
         [Test]
