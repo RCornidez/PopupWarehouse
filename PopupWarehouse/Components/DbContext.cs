@@ -32,6 +32,8 @@ namespace Data
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<WarehouseLocation> WarehouseLocations { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
 
     }
 
