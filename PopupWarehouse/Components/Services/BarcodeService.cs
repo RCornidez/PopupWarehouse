@@ -12,7 +12,7 @@ namespace Services
             //BarcodeGenerator.GenerateBarcode("code128", "123456789012", "my_barcode", 0.2f, 15.0f);
 
             // Path to the executable
-            string executablePath = @"C:\Users\rodri\Documents\code\C#\PopupWarehouse_\PopupWarehouse\Components\Python\BarcodeGenerator\GenerateBarcode.exe";
+            string executablePath = @"C:\Users\rodri\Documents\code\C#\PopupWarehouse_\PopupWarehouse\Components\Executables\BarcodeGenerator\GenerateBarcode.exe";
 
             // Constructing the arguments string
             string args = $"{barcodeType} {data} {filename} {moduleWidth} {moduleHeight}";

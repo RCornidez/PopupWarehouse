@@ -24,8 +24,7 @@ namespace Models
         public int OrderItemId { get; set; }
 
         [Required]
-        public int ProductId { get; set; } // Assuming you have a Product model
-
+        public int ProductId { get; set; }
         [Required]
         public int Quantity { get; set; }
     }
