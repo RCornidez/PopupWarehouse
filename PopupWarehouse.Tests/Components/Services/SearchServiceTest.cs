@@ -4,7 +4,7 @@ using Services;
 using Models;
 using System.Threading.Tasks;
 
-namespace YourApp.Tests
+namespace Tests
 {
     [TestFixture]
     public class SearchServiceTests

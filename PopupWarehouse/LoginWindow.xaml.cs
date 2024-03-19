@@ -2,11 +2,13 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace PopupWarehouse
+using Views;
+
+namespace Views
 {
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        public LoginWindow()
         {
             InitializeComponent();
         }
@@ -32,7 +34,12 @@ namespace PopupWarehouse
         private void LoginClick(object sender, RoutedEventArgs e)
         {
             string username = Username.Text;
-            string password = PasswordBox.Password; 
+            string password = PasswordBox.Password;
+
+            // Open Dashboard Window
+            DashboardWindow dashboard = new DashboardWindow();
+            dashboard.Show();
+            this.Close();
 
         }
         private bool AuthenticateUser(string username, string password)
