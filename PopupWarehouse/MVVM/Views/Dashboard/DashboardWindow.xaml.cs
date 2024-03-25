@@ -3,6 +3,11 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Input;
 
+using Data;
+using Services;
+using ViewModels;
+
+
 namespace Views
 {
     public partial class DashboardWindow : Window
@@ -10,6 +15,11 @@ namespace Views
         public DashboardWindow()
         {
             InitializeComponent();
+                    
+            this.Loaded += MainWindow_Loaded;
+            var context = new AppDbContext("TestConnection");
+            var productService = new ProductService(context);
+            this.DataContext = new ProductViewModel(productService);
         }
 
         // Navigation Methods
@@ -48,6 +58,17 @@ namespace Views
                 searchTextBox.Text = "Search";
                 searchTextBox.Foreground = Brushes.Gray;
             }
+        }
+
+        // Clip Grid Corners
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            ClipDataGridToRound();
+            MyDataGrid.SizeChanged += (s, evt) => ClipDataGridToRound();
+        }
+        private void ClipDataGridToRound()
+        {
+            MyDataGrid.Clip = new RectangleGeometry(new Rect(0, 0, MyDataGrid.ActualWidth, MyDataGrid.ActualHeight), 5, 5);
         }
 
     }

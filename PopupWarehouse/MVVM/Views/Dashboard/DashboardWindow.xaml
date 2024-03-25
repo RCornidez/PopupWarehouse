@@ -114,8 +114,10 @@
         <Grid Grid.Column="1" Background="#f8fafc">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            
 
             <!-- Search bar and user icon -->
             <Border Grid.Row="0" BorderThickness="0,0,0,2" BorderBrush="#e2e8f0">
@@ -130,7 +132,18 @@
                     </Grid.ColumnDefinitions>
 
                     <!-- Search bar -->
-                    <Border Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" CornerRadius="5" Background="#f1f5f9" Padding="0,5" Width="120" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus" BorderThickness="2" BorderBrush="#e2e8f0">
+                    <Border Grid.Column="0" 
+                        VerticalAlignment="Center" 
+                        HorizontalAlignment="Left" 
+                        Margin="20,0,0,0" 
+                        CornerRadius="5" 
+                        Background="#f1f5f9" 
+                        Padding="0,5" 
+                        Width="120" 
+                        GotFocus="TextBox_GotFocus" 
+                        LostFocus="TextBox_LostFocus" 
+                        BorderThickness="2" 
+                        BorderBrush="#e2e8f0" >
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
@@ -155,6 +168,63 @@
 
                 </Grid>
             </Border>
+
+            <Grid Grid.Row="1" Width="Auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Left Always Visible List -->
+                <Grid Grid.Column="0">
+                    <!-- Add Products -->
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Add Products"  Margin="15,0,0,0" Padding="5" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Button Content="Update Products" Margin="5,0,0,0" Padding="5" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Button Content="Delete Products" Margin="5,0,0,0" Padding="5" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <Button Content="Create Labels" Margin="5,0,0,0" Padding="5" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Grid>
+                
+                <!-- Visible when Selected Button Actions -->
+                <Grid Grid.Column="1">
+                    <!-- Create Labels Selected Rows -->
+                    <!-- Updated Selected Selected Rows -->
+                    <!-- Delete Selected Selected Rows -->
+                </Grid>
+            </Grid>
+
+
+            <Border Grid.Row="2" Background="Transparent" BorderBrush="#e2e8f0" BorderThickness="2" CornerRadius="5" Margin="10,0,10,10">
+
+                <DataGrid
+                    SelectionMode="Extended" 
+                    CanUserAddRows="False" 
+                    FontSize="12" 
+                    x:Name="MyDataGrid" 
+                    GridLinesVisibility="None" 
+                    AutoGenerateColumns="True" 
+                    ItemsSource="{Binding Products}" 
+                    BorderThickness="0" 
+                    Background="Transparent">
+                    <DataGrid.Resources>
+                        <Style TargetType="DataGridColumnHeader">    
+                            <Setter Property="FontWeight" Value="Bold"/>
+                        </Style>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="BorderBrush" Value="#e2e8f0"/>
+                            <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                        </Style>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Margin" Value="10"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGrid.Resources>
+                </DataGrid>
+            </Border>
+
+
         </Grid>
     </Grid>
 

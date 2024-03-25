@@ -49,8 +49,8 @@ namespace Tests
         public void GlobalTeardown()
         {
             // Clean up the database after tests
-            _context.Database.EnsureDeleted();
-            _context.Dispose();
+            //_context.Database.EnsureDeleted();
+            //_context.Dispose();
         }
 
         [Test]

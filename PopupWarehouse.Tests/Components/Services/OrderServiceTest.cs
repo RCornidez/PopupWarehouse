@@ -27,7 +27,7 @@ namespace Tests
         [OneTimeTearDown]
         public void GlobalTeardown()
         {
-            _context.Database.EnsureDeleted(); // Delete the database after tests
+            //_context.Database.EnsureDeleted(); // Delete the database after tests
         }
 
         [SetUp]
